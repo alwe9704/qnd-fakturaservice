@@ -52,7 +52,7 @@ const InvoiceVisual = (invoice: Invoice) => {
             <b>Fakturamottagare:</b>
           </p>
           <p>{invoice.Reciever.name}</p>
-          <p>{invoice.Reciever.responseibleName}</p>
+          <p>{invoice.Reciever.responsibleName}</p>
           <p>{invoice.Reciever.responsibleAddress}</p>
         </div>
       </div>
