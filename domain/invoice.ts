@@ -9,7 +9,7 @@ interface Invoice {
   dueDate: string;
   Reciever: {
     name: string;
-    responseibleName: string;
+    responsibleName: string;
     responsibleAddress: string;
   };
   Sender: {

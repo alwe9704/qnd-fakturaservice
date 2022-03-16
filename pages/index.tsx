@@ -4,6 +4,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useQuery } from "react-query";
+import InvoiceForm from "../components/InvoiceForm";
 import Invoice from "../domain/invoice";
 import generateInvoiceBuffer from "../faktura-react/generateInvoice";
 import InvoiceVisual from "../faktura-react/InvoiceVisual/InvoiceVisual";
@@ -18,7 +19,7 @@ const sampleInvoice: Invoice = {
   dueDate: "2022-04-12",
   Reciever: {
     name: "BobMcBob III",
-    responseibleName: "Bob Bobson",
+    responsibleName: "Bob Bobson",
     responsibleAddress: "Arkdalerhögsgatan 139, 114 38, Skellefteå",
   },
   Sender: {
@@ -74,6 +75,7 @@ const Home: NextPage = () => {
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
+        <InvoiceForm />
         <div style={{ width: "60vw", height: "60vw" }}>
           {status === "loading" ? (
             <div>Loading...</div>

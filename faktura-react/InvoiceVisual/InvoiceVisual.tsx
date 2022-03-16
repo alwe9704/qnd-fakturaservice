@@ -146,7 +146,7 @@ const InvoiceVisual = (invoice: Invoice) => {
         style={{
           width: "100%",
           height: "25vh",
-          position: "fixed",
+          position: "relative",
           bottom: "0",
         }}
       >
@@ -155,7 +155,7 @@ const InvoiceVisual = (invoice: Invoice) => {
             float: "left",
             width: "40%",
             fontSize: "6pt",
-            position: "fixed",
+            position: "relative",
             bottom: "0",
           }}
         >
