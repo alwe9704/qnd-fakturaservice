@@ -1,0 +1,36 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "image header header"
+    "image topLeft topRight"
+    "image . bottomRight"
+    "footer footer footer";
+}
+
+.image {
+  grid-area: Image;
+}
+
+.header {
+  grid-area: Header;
+}
+
+.footer {
+  grid-area: Footer;
+}
+
+.topLeft {
+  grid-area: TopLeft;
+}
+
+.topRight {
+  grid-area: TopRight;
+}
+
+.bottomRight {
+  grid-area: BottomRight;
+}
