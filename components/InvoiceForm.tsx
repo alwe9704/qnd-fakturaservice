@@ -206,6 +206,11 @@ const InvoiceForm = () => {
     <div style={{ marginBottom: "10vh" }}>
       {personalForm}
       <h3>Information om mottagare</h3>
+      <button
+        onClick={() => {
+          rows;
+        }}
+      ></button>
       <div style={{ height: "50vh", width: "100%" }}>
         <DataGrid columns={columns} rows={rows} />
       </div>

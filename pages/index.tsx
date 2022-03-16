@@ -52,12 +52,12 @@ const sampleInvoice: Invoice = {
 
 const Home: NextPage = () => {
   const { status, data } = useQuery("invoices", async () => {
-    const res = await fetch("/api/hello", {
+    const res = await fetch("/api/generatePdf", {
       method: "POST",
       body: JSON.stringify({ invoices: [sampleInvoice] }),
     });
     const data = await res.json();
-    const pdf: string = data.pdf;
+    const pdf: string = data.pdfs[0].pdf;
     return pdf;
   });
 
