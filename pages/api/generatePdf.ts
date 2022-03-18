@@ -6,6 +6,8 @@ import generateInvoiceBuffer from "../../faktura-react/generateInvoice";
 import Invoice from "../../domain/invoice";
 import InvoiceVisual from "../../faktura-react/InvoiceVisual/InvoiceVisual";
 
+import Cors from "cors";
+
 type Data = {
   pdfs: {
     name: string;
@@ -13,10 +15,39 @@ type Data = {
   }[];
 };
 
+const cors = Cors({
+  methods: ["POST"],
+});
+
+function runMiddleware(
+  req: NextApiRequest,
+  res: NextApiResponse<Data>,
+  fn: (
+    req: Cors.CorsRequest,
+    res: {
+      statusCode?: number | undefined;
+      setHeader(key: string, value: string): any;
+      end(): any;
+    },
+    next: (err?: any) => any
+  ) => void
+) {
+  return new Promise((resolve, reject) => {
+    fn(req, res, (result) => {
+      if (result instanceof Error) {
+        return reject(result);
+      } else {
+        return resolve(result);
+      }
+    });
+  });
+}
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
+  await runMiddleware(req, res, cors);
   const invoices: Invoice[] = JSON.parse(req.body).invoices;
 
   const pdfs: { name: string; pdf: string }[] = [];

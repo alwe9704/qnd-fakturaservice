@@ -83,6 +83,9 @@ const Home: NextPage = () => {
             <iframe src={pdfEncoding} height="100%" width="100%"></iframe>
           )}
         </div>
+        <a href={pdfEncoding} download>
+          Ladda ned
+        </a>
       </main>
 
       <footer className={styles.footer}>
