@@ -229,7 +229,7 @@ const generateInvoice = (invoice) => {
           stack: [
             `Tel: ${invoice.Sender.phone}`,
             " ",
-            `Email: ${invoice.Sender.email}`,
+            `Email: ${invoice.Sender.mail}`,
             " ",
             `Web: ${invoice.Sender.web}`,
           ],
